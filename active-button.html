@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+/* Style the buttons */
+.btn {
+  border: none;
+  outline: none;
+  padding: 10px 16px;
+  background-color: #000;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+/* Style the active class, and buttons on mouse-over */
+.active, .btn:hover {
+  background-color: #0CEAF;
+  color: white;
+}
+</style>
+</head>
+<body>
+
+<h1>Active Button example</h1>
+<p>Highlight the active button.</p>
+  
+<div id="myBtn">
+  <button class="btn">Home</button>
+  <button class="btn">About</button>
+  <button class="btn">Services</button>
+  <button class="btn">Folio</button>
+  <button class="btn">Contact</button>
+</div>
+
+<script>
+// Add active class to the current button (highlight it)
+var header = document.getElementById("myBtn");
+var
+ btns = header.getElementsByClassName("btn");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function() {
+  var current = document.getElementsByClassName("active");
+  if (current.length > 0) { 
+    current[0].className = current[0].className.replace(" active", "");
+  }
+  this.className += " active";
+  });
+}
+</script>
+
+</body>
+</html>
